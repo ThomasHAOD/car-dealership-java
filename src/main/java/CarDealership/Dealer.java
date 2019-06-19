@@ -15,8 +15,10 @@ public class Dealer {
         return this.name;
     }
 
-    public void sell(Car car, Customer customer, Till till) {
+    public void sell(Car car, Customer customer, Till till, Dealership dealership) {
         customer.payFor(car);
         till.addCash(car);
+        dealership.sellCar(car);
     }
+
 }

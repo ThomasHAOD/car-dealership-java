@@ -14,8 +14,8 @@ public class TeslaTest {
 
     @Before
     public void before(){
-        tyre = new Tyre("Rubber");
-        engine = new Engine("Electric");
+        tyre = new Tyre("Rubber", 10.00);
+        engine = new Engine("Electric", 10.00);
         tesla = new Tesla(30000.04, "Blue", engine, tyre);
 
     }
@@ -28,5 +28,16 @@ public class TeslaTest {
     @Test
     public void canGetEngineModel(){
         assertEquals("Electric", tesla.getEngineModel());
+    }
+
+    @Test
+    public void canCheckEngineForDamage(){
+        engine.setDamage(true);
+        assertEquals(true, tesla.checkEngineDamage());
+    }
+
+    @Test
+    public void canGetRepairCostForEngine(){
+        assertEquals(10.00, tesla.getRepairCostForEngine(), 0.01);
     }
 }

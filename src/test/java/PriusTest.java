@@ -14,8 +14,8 @@ public class PriusTest {
 
     @Before
     public void before(){
-        engine = new Engine("Hybrid");
-        tyre = new Tyre("Rubber");
+        engine = new Engine("Hybrid", 10.00);
+        tyre = new Tyre("Rubber", 10.00);
         prius = new Prius(12000.50, "Silver", engine, tyre);
 
     }

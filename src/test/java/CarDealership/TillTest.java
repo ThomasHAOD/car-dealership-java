@@ -18,8 +18,8 @@ public class TillTest {
     @Before
     public void before(){
         till = new Till(10000.00);
-        engine = new Engine("Electric");
-        tyre = new Tyre("Rubber");
+        engine = new Engine("Electric", 10.00);
+        tyre = new Tyre("Rubber", 10.00);
         tesla = new Tesla(45000.00, "Silver", engine, tyre);
     }
 

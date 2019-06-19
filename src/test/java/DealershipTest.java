@@ -19,8 +19,8 @@ public class DealershipTest {
     @Before
     public void before(){
         dealership = new Dealership();
-        engine = new Engine("Electric");
-        tyre = new Tyre("Racing");
+        engine = new Engine("Electric", 10.00);
+        tyre = new Tyre("Racing", 10.00);
         tesla = new Tesla(5000.00, "Silver", engine, tyre);
         prius = new Prius(4000.00, "Silver", engine, tyre);
     }
@@ -35,6 +35,13 @@ public class DealershipTest {
     public void canAddComponents(){
         dealership.addComponent(engine);
         assertEquals(1, dealership.getComponentStockLevel());
+    }
+
+    @Test
+    public void canSellCar(){
+        dealership.addCar(tesla);
+        dealership.sellCar(tesla);
+        assertEquals(0, dealership.getCarStockLevel());
     }
 
 }

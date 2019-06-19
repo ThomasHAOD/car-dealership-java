@@ -32,4 +32,8 @@ public class Dealership {
     public int getComponentStockLevel() {
         return this.components.size();
     }
+
+    public void sellCar(Car car) {
+        this.carStock.remove(car);
+    }
 }

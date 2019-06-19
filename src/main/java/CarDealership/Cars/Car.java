@@ -36,4 +36,11 @@ public abstract class Car {
         return this.tyre.getModel();
     }
 
+    public boolean checkEngineDamage() {
+        return this.engine.getDamage();
+    }
+
+    public double getRepairCostForEngine() {
+        return this.engine.getPriceForRepair();
+    }
 }

@@ -10,7 +10,7 @@ public class TyreTest {
 
     @Before
     public void before(){
-        tyre = new Tyre("Snow");
+        tyre = new Tyre("Snow", 10.00);
     }
 
     @Test

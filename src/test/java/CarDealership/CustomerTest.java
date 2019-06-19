@@ -18,8 +18,8 @@ public class CustomerTest {
     @Before
     public void before(){
         customer = new Customer("Hank", 50000.00);
-        engine = new Engine("Electric");
-        tyre = new Tyre("Rubber");
+        engine = new Engine("Electric", 10.00);
+        tyre = new Tyre("Rubber", 10.00);
         tesla = new Tesla(45000.00, "Silver", engine, tyre);
 
     }
@@ -38,5 +38,11 @@ public class CustomerTest {
     public void canPay(){
         customer.payFor(tesla);
         assertEquals(5000.00, customer.getCash(), 0.01);
+    }
+
+    @Test
+    public void customerCanHaveCarInGarage(){
+        customer.addCarToGarage(tesla);
+        assertEquals(1, customer.getNumberOfCars());
     }
 }
