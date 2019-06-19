@@ -36,11 +36,4 @@ public abstract class Car {
         return this.tyre.getModel();
     }
 
-//    public int getNumOfComponents(){
-//        return this.components.size();
-//    }
-//
-//    public void addComponent(Component component){
-//        this.components.add(component);
-//    }
 }
