@@ -2,6 +2,7 @@ package CarDealership.Cars;
 
 import CarDealership.Components.Component;
 import CarDealership.Components.Engine;
+import CarDealership.Components.Tyre;
 
 import java.util.ArrayList;
 
@@ -9,12 +10,14 @@ public abstract class Car {
 
     private double price;
     private String colour;
-    private ArrayList<Component> components;
+    private Engine engine;
+    private Tyre tyre;
 
-    public Car(double price, String colour){
+    public Car(double price, String colour, Engine engine, Tyre tyre){
         this.price = price;
         this.colour = colour;
-        this.components = new ArrayList<Component>();
+        this.engine = engine;
+        this.tyre = tyre;
     }
 
     public double getPrice(){
@@ -25,11 +28,19 @@ public abstract class Car {
         return this.colour;
     }
 
-    public int getNumOfComponents(){
-        return this.components.size();
+    public String getEngineModel(){
+        return this.engine.getModel();
     }
 
-    public void addComponent(Component component){
-        this.components.add(component);
+    public String getTyreModel(){
+        return this.tyre.getModel();
     }
+
+//    public int getNumOfComponents(){
+//        return this.components.size();
+//    }
+//
+//    public void addComponent(Component component){
+//        this.components.add(component);
+//    }
 }

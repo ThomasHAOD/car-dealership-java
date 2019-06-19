@@ -1,5 +1,6 @@
 import CarDealership.Cars.Prius;
 import CarDealership.Components.Engine;
+import CarDealership.Components.Tyre;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,11 +10,14 @@ public class PriusTest {
 
     Prius prius;
     Engine engine;
+    Tyre tyre;
 
     @Before
     public void before(){
-        prius = new Prius(12000.50, "Silver");
         engine = new Engine("Hybrid");
+        tyre = new Tyre("Rubber");
+        prius = new Prius(12000.50, "Silver", engine, tyre);
+
     }
 
     @Test
@@ -27,9 +31,9 @@ public class PriusTest {
     }
 
     @Test
-    public void canAddComponent(){
-        prius.addComponent(engine);
-        assertEquals(1, prius.getNumOfComponents());
+    public void canGetTyreModel(){
+        assertEquals("Rubber", prius.getTyreModel());
     }
+
 
 }
